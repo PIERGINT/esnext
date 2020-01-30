@@ -50,10 +50,10 @@ class Trip {
     set price(newPrice) {
         this._price = newPrice
     }
-
     toString() {
         return 'Trip [' + this.id + ", " + this.name + ", " + this.imageUrl + ", " + this.price + ']';
     }
+
     static getDefaultTrip() {
         return new Trip('rio-de-janeiro', 'Rio de Janeiro', 'img/rio-de-janeiro.jpg', '')
     }
@@ -78,7 +78,11 @@ class FreeTrip extends Trip {
         this.price = 0
 
     }
-    
+    toString() {
+        return 'Free' + super.toString();
+    }
 }
-const freeTrip = new FreeTrip ('nantes', 'Nantes', 'img/nantes.jpg', price)
+const freeTrip = new FreeTrip('nantes', 'Nantes', 'img/nantes.jpg', price)
 console.log(freeTrip.toString())
+
+
